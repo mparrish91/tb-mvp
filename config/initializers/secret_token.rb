@@ -19,4 +19,4 @@ def secure_token
   end
 end
 
-Microposter::Application.config.secret_key_base = secure_token
+Tb::Application.config.secret_key_base = secure_token

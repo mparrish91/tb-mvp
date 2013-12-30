@@ -1,4 +1,4 @@
-# Microposter: A Twitter Clone
+# Tb: A Twitter Clone
 
 This is the sample application for
 [*Ruby on Rails Tutorial: Learn Web Development with Rails*](http://railstutorial.org/)

@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Microposter::Application.load_tasks
+Tb::Application.load_tasks
