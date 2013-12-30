@@ -1,5 +1,5 @@
  <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation"style="height: 0;"> 
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -13,9 +13,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="#"><%= link_to "Home", root_path %></li>
-            <li class="#"><%= link_to "Help", help_path %></li>
-            <li class="#"><%= link_to "Sign in", signup_path %></li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <li class="#"><%= link_to "Sign up", signup_path %></li>
+            <li class="#"><%= link_to "Sign out", signout_path, { method: :delete }   %></li>
+              <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li><a href="#">Action</a></li>
                 <li><a href="#">Another action</a></li>
@@ -24,13 +24,11 @@
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>
                 <li><a href="#">One more separated link</a></li>
-              </ul>
+              </ul> -->
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="#"><a href="./">Fixed top</a></li>
+            <li class="#"><%= link_to "Sign in", signin_path %></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
