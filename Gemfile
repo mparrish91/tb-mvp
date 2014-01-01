@@ -15,10 +15,10 @@ gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 
 
-# group :production do
-#   gem 'pg', '0.15.1'
-#   gem 'rails_12factor', '0.0.2'
-# end
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
