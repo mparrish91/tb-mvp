@@ -5,6 +5,7 @@
     </span>
     <span class="content"><%= wrap(feed_item.content) %></span>
     <span class="timestamp">
+      Category: <%= feed_item.category %>
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
   <% if current_user?(feed_item.user) %>
