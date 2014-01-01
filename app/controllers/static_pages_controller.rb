@@ -22,7 +22,7 @@ class StaticPagesController < ApplicationController
     when 'Leadership'
       @feed_items = Micropost.where("category == ?", "Leadership").paginate(page: params[:page])
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])  
+      # @feed_items = Micropost.all.paginate(page: params[:page])  
     end
   end
   
