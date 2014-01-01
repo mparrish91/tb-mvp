@@ -6,40 +6,23 @@ class StaticPagesController < ApplicationController
       @feed_items = current_user.feed.paginate(page: params[:page])
     end
 
-    if params[:health]
-      @feed_items = current_user.feed.paginate(page: :category params[:page])
+    case params[:category]
+    when 'Health'
+      @feed_items = Micropost.where("category == ?", "Health").paginate(page: params[:page])
+    when 'Fitness'
+      @feed_items = Micropost.where("category == ?", "Fitness").paginate(page: params[:page])
+    when 'Family'
+      @feed_items = Micropost.where("category == ?", "Family").paginate(page: params[:page])
+    when 'Religion'
+      @feed_items = Micropost.where("category == ?", "Religion").paginate(page: params[:page])  
+    # when 'Human'
+      # @feed_items = Micropost.where("category == ?", "").paginate(page: params[:page])
+    when 'Relations'
+      @feed_items = Micropost.where("category == ?", "Relations").paginate(page: params[:page])
+    when 'Leadership'
+      @feed_items = Micropost.where("category == ?", "Leadership").paginate(page: params[:page])
     else
-      5.times { puts "No Malcolm!!!" }
-    end
-
-    if params[:fitness]
-      5.times { puts "Malcolm!!!" }
-    else
-      5.times { puts "No Malcolm!!!" }
-    end
-
-    if params[:family]
-      5.times { puts "Malcolm!!!" }
-    else
-      5.times { puts "No Malcolm!!!" }
-    end
-
-    if params[:religion]
-      5.times { puts "Malcolm!!!" }
-    else
-      5.times { puts "No Malcolm!!!" }
-    end
-
-       if params[:humanrelationships]
-      5.times { puts "Malcolm!!!" }
-    else
-      5.times { puts "No Malcolm!!!" }
-    end
-
-       if params[:leadership]
-      5.times { puts "Malcolm!!!" }
-    else
-      5.times { puts "No Malcolm!!!" }
+      @feed_items = current_user.feed.paginate(page: params[:page])  
     end
   end
   

@@ -5,12 +5,12 @@
     <div class="span4 feeditem">
       <h3>Bricks</h3>
       <div class="row">
-				<%= link_to 'Health', root_path(health: true) %>
-				<%= link_to 'Fitness', root_path(fitness: true) %>
-				<%= link_to 'Family', root_path(family: true) %>
-				<%= link_to 'Religion', root_path(religion: true) %>
-				<%= link_to 'Human Relations', root_path(humanrelations: true) %>
-				<%= link_to 'Leadership', root_path(leadership: true) %>
+				<%= link_to 'Health', root_path(category: "Health" ) %>
+				<%= link_to 'Fitness', root_path(category: "Fitness" ) %>
+				<%= link_to 'Family', root_path(category: "Family" ) %>
+				<%= link_to 'Religion', root_path(category: "Religion" ) %>
+				<%= link_to 'Human Relations', root_path(category: "Relations" ) %>
+				<%= link_to 'Leadership', root_path(category: "Leadership" ) %>
 			</div>
       <%= render 'shared/feed' %>
     </div>
