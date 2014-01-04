@@ -14,7 +14,24 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page])
+    
+
+  case params[:category]
+    when 'Health'
+      @microposts = Micropost.where("category == ? AND user_id = ?", "Health", @user.id).paginate(page: params[:page])
+    when 'Fitness'
+      @microposts = Micropost.where("category == ? AND user_id = ?", "Fitness", @user.id).paginate(page: params[:page])
+    when 'Family'
+      @microposts = Micropost.where("category == ? AND user_id = ?", "Family", @user.id).paginate(page: params[:page])
+    when 'Religion'
+      @microposts = Micropost.where("category == ? AND user_id = ?", "Religion", @user.id).paginate(page: params[:page])  
+    when 'Relations'
+      @microposts = Micropost.where("category == ? AND user_id = ?", "Relations", @user.id).paginate(page: params[:page])
+    when 'Leadership'
+      @microposts = Micropost.where("category == ? AND user_id = ?", "Leadership", @user.id).paginate(page: params[:page])
+    else
+     @microposts = @user.microposts.paginate(page: params[:page]) 
+    end
   end
 
   def new
