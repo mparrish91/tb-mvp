@@ -2,25 +2,28 @@
 
   <div class="row">
     <%= render 'shared/user_sidebar' %>
+
     <div class="span4 feeditem">
-    	<div class="row">
-			
-			</div>
-      <h3>Bricks</h3>
-      <div class="row">
-				<%= link_to 'Health', root_path(category: "Health" ) %>
-				<%= link_to 'Fitness', root_path(category: "Fitness" ) %>
-				<%= link_to 'Family', root_path(category: "Family" ) %>
-				<%= link_to 'Religion', root_path(category: "Religion" ) %>
-				<%= link_to 'Human Relations', root_path(category: "Relations" ) %>
-				<%= link_to 'Leadership', root_path(category: "Leadership" ) %>
-			</div>
-      <%= render 'shared/feed' %>
+    <h3>Bricks</h3>
+    <div class="btn-group">
+			<%= link_to 'Health', root_path(category: "Health" ), class: "btn btn-default" %>
+			<%= link_to 'Fitness', root_path(category: "Fitness" ), class: "btn btn-default" %>
+			<%= link_to 'Family', root_path(category: "Family" ), class: "btn btn-default" %>
+			<%= link_to 'Religion', root_path(category: "Religion" ), class: "btn btn-default" %>
+			<%= link_to 'Human Relations', root_path(category: "Relations" ), class: "btn btn-default" %>
+			<%= link_to 'Leadership', root_path(category: "Leadership" ), class: "btn btn-default" %>
+		</div>
+
+    <%= render 'shared/feed' %>
+    
     </div>
   </div>  
 <% else %>
-  <%= render 'logged_out_hero_unit' %>
+
+<%= render 'logged_out_hero_unit' %>
+
 <% end %> 
+
 
 
 

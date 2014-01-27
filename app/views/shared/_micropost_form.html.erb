@@ -1,12 +1,15 @@
 <%= form_for(@micropost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost...", autofocus: true, id: "micropost-text" %>
-  </div>
 
-  <div class="field">
-    <%= f.text_field :category, placeholder: "Category..", id: "micropost-category" %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary", style: "width: 100%;" %>
-  <span id="character-count">Remaining: 140</span>
+  <%= render 'shared/error_messages', object: f.object %>
+	
+		<div class="field">
+    	<%= f.text_area :content, placeholder: "Compose new micropost...", autofocus: true, id: "micropost-text" %>
+  	</div>
+
+  	<div class="field">
+    	<%= f.text_field :category, placeholder: "Category..", id: "micropost-category" %>
+  	</div>
+  
+  	<%= f.submit "Post", class: "btn btn-large btn-primary", style: "width: 100%;" %>
+			<span id="character-count">Remaining: 140</span>
 <% end %>

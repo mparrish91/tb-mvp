@@ -1,5 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
+
   <aside class="span4">
     <section>
       <h1>
@@ -13,23 +14,26 @@
       <%= render 'shared/stats' %>
     </section>
   </aside>
+
   <div class="span8">
     <%= render 'follow_form' if signed_in? %>
+
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <div class="row">
-        <%= link_to 'Health', user_path(@user.id, category: "Health" ) %>
-        <%= link_to 'Fitness', user_path(@user.id, category: "Fitness" ) %>
-        <%= link_to 'Family', user_path(@user.id, category: "Family" ) %>
-        <%= link_to 'Religion', user_path(@user.id, category: "Religion" ) %>
-        <%= link_to 'Human Relations', user_path(@user.id, category: "Relations" ) %>
-        <%= link_to 'Leadership', user_path(@user.id, category: "Leadership" ) %>
-      </div>
+          <%= link_to 'Health', user_path(@user.id, category: "Health"), class: "btn btn-default" %>
+          <%= link_to 'Fitness', user_path(@user.id, category: "Fitness"), class: "btn btn-default" %>
+          <%= link_to 'Family', user_path(@user.id, category: "Family"), class: "btn btn-default" %>
+          <%= link_to 'Religion', user_path(@user.id, category: "Religion"), class: "btn btn-default" %>
+          <%= link_to 'Human Relations', user_path(@user.id, category: "Relations"), class: "btn btn-default" %>
+          <%= link_to 'Leadership', user_path(@user.id, category: "Leadership"), class: "btn btn-default" %>
+        </div>
+        
         <%= render @microposts %>
-
       </ol>
       <%= will_paginate @microposts %>
+
     <% end %>
   </div>
 </div>
